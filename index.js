@@ -58,7 +58,7 @@ function getCurrentTime() {
 function appendMessage(name, messageHTML) {
     var el = document.createElement("div");
     el.innerHTML = ("<span style='font-size: 10px; vertical-align: center;'>" + getCurrentTime() + "</span>")
-    el.innerHTML += (`<span style='color: ${Object.values(chatColors)[Math.floor(Math.random() * Object.values(chatColors).length)]};'><b>${name}</b></span>: `);
+    el.innerHTML += (` <span style='color: ${Object.values(chatColors)[Math.floor(Math.random() * Object.values(chatColors).length)]};'><b>${name}</b></span>: `);
     // el.innerHTML += (`<span style='color: red;'><b>${name}</b></span>: `);
     el.innerHTML += messageHTML;
     var div = document.getElementById("message-log");

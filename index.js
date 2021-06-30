@@ -1,6 +1,24 @@
 const socket = io('http://192.168.1.119:25565');
 // const socket = io('http://2.49.126.46:25565', { transports: ["websocket"] });
 
+const chatColors = {
+    "Blue": "#0000ff",
+    "Coral": "#FF7F50",
+    "DodgerBlue": "#1E90FF",
+    "SpringGreen": "#26D07C",
+    "YellowGreen": "#D6E865",
+    "Green": "#00FF00",
+    "OrangeRed": "#FC4C02",
+    "Red": "#FF0000",
+    "GoldenRod": "#FFB81C",
+    "HotPink": "#E31C79",
+    "CadetBlue": "#5F9EA0",
+    "SeaGreen": "#2E8B57",
+    "Chocolate": "#84563C",
+    "BlueViolet": "#9933CC",
+    "FireBrick": "#993333"
+}
+
 const username = prompt('What is your name?');
 appendMessage("Server", '<b>You joined</b>');
 socket.emit('new-user', username);
@@ -40,7 +58,8 @@ function getCurrentTime() {
 function appendMessage(name, messageHTML) {
     var el = document.createElement("div");
     el.innerHTML = ("<span style='font-size: 10px; vertical-align: center;'>" + getCurrentTime() + "</span>")
-    el.innerHTML += (" <span style='color: red;'><b>" + name + "</b></span>: ");
+    el.innerHTML += (`<span style='color: ${Object.values(chatColors)[Math.floor(Math.random() * Object.values(chatColors).length)]};'><b>${name}</b></span>: `);
+    // el.innerHTML += (`<span style='color: red;'><b>${name}</b></span>: `);
     el.innerHTML += messageHTML;
     var div = document.getElementById("message-log");
     div.appendChild(el);

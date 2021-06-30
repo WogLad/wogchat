@@ -1,0 +1,29 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>WogChat</title>
+    <!-- <script defer src="http://192.168.1.119:25565/socket.io/socket.io.js"></script> -->
+    <!-- <script defer src="http://2.49.126.46:25565/socket.io/socket.io.js"></script> -->
+    <script defer src="socket.io.js"></script>
+    <!-- <script defer src="socket.io.js.map"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <!-- <link rel="preload" as="style" href="style.css" onload="this.rel='stylesheet'" /> -->
+
+    <div id="message-log" class="scroll" style="width: 439px;"></div>
+    <!-- <hr width=445px align="left" color="black"> -->
+    <div style="transform: translateY(7px);display: flex;align-content: center;justify-content: space-between; width: 475px">
+        <div class="main-input" contenteditable="true" id="main-input" autofocus></div>
+        <button onclick="sendButton();"><b>Send</b></button>
+        <button onclick="toggleEmojiMenu();">🙂</button>
+    </div>
+    <div hidden id="emoji-menu" class="scroll" style="position: fixed; width: 200px; height: 250px; transform: translate(345px, -295px);"></div>
+</body>
+
+</html>

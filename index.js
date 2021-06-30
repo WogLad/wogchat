@@ -1,5 +1,6 @@
-const socket = io('http://192.168.1.119:25565');
-// const socket = io('http://2.49.126.46:25565', { transports: ["websocket"] });
+// const socket = io('http://192.168.1.119:25565');
+const socket = io(`http://${document.domain}:25565`);
+// const socket = io('http://192.168.1.119:25565', { transports: ["websocket"] });
 
 const chatColors = {
     "Blue": "#0000ff",
